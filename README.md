@@ -29,36 +29,10 @@ The `Algorithms` component contains various graph algorithms that operate on the
 
 To compile and run the project:
 
-1. Ensure you have a C++ compiler installed.
+1. Ensure you have a g++ compiler installed.
 2. Clone the repository.
 3. Navigate to the project directory.
 4. Run `make` to compile the project.
 5. Execute `./demo` to run the demo program or `./test` to run the tests.
 
-## Usage
 
-### Graph Operations
-
-```cpp
-#include "Graph.hpp"
-
-ariel::Graph g;
-
-// Load a graph
-vector<vector<int>> graph = {
-    {0, 1, 0},
-    {1, 0, 1},
-    {0, 1, 0}
-};
-g.loadGraph(graph);
-
-// Check properties
-cout << "Is Directed: " << g.isDirected() << endl;
-cout << "Is Weighted: " << g.isWeighted() << endl;
-cout << "Include Negative Edges: " << g.includeNegative() << endl;
-cout << "Number of Vertices: " << g.numOfVertices() << endl;
-
-// Graph Operations
-g.printGraph();
-vector<int> neighbors = g.neighborsOf(0);
-vector<vector<int>> edges = g.allEdges();
