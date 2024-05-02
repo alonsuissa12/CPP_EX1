@@ -22,7 +22,7 @@ The `Algorithms` component contains various graph algorithms that operate on the
 - **Connectivity**: Determines if the graph is connected and finds connected components.
 - **Shortest Paths**: Finds the shortest path between two vertices using Dijkstra/Bellman-Ford algorithm, handling both weighted and unweighted graphs.
 - **Cycles**: Determines if the graph contains a cycle and finds negative cycles in directed graphs. 
--     Note: a cycle is at least 3 verices long, however in the case of negetive cycle 2 long verices is enough because is still disturbing the shortest path algorithm 
+        Note: a cycle is at least 3 verices long, however in the case of negetive cycle 2 long verices is enough because is still disturbing the shortest path algorithm 
 - **Bipartiteness**: Determines if the graph is bipartite and returns the partition of vertices if it is.
 
 ## Building and Running
