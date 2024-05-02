@@ -45,5 +45,8 @@ The decision to separate the Graph and Algorithms components allows for better o
 
 This partitioning approach adheres to the principles of separation of concerns and modular design, making the project more organized, maintainable, and extensible. Users can focus on either the graph representation or the algorithms independently, depending on their requirements, without affecting the other component.
 
+## Conclusion
+
+This project provides a comprehensive set of tools for working with graphs in C++. Whether you need to analyze properties of a graph or apply various algorithms to it, this project has you covered. The clear separation between the Graph and Algorithms components allows for easy understanding, maintenance, and extension of the codebase.
 
 
