@@ -35,4 +35,15 @@ To compile and run the project:
 4. Run `make` to compile the project.
 5. Execute `./demo` to run the demo program or `./test` to run the tests.
 
+## Partition between Graph and Algorithms
+
+The decision to separate the Graph and Algorithms components allows for better organization and modularity within the project. Here's why:
+
+- **Graph Component**: The Graph component focuses on the representation and manipulation of graph structures. It provides functionalities to create, load, and operate on graphs, including querying properties and retrieving information about vertices and edges. By keeping the graph-related operations separate, it ensures that the implementation remains clean and focused on graph data management.
+
+- **Algorithms Component**: The Algorithms component is responsible for implementing various graph algorithms, such as connectivity checks, shortest path finding, cycle detection, and bipartiteness determination. By placing these algorithms in a separate module, it promotes code reuse and makes it easier to maintain and extend the project. Additionally, separating algorithms from the graph representation allows for flexibility in choosing different algorithms without modifying the underlying graph structure.
+
+This partitioning approach adheres to the principles of separation of concerns and modular design, making the project more organized, maintainable, and extensible. Users can focus on either the graph representation or the algorithms independently, depending on their requirements, without affecting the other component.
+
+
 
