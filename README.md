@@ -20,7 +20,7 @@ The `Graph` component is responsible for representing graphs and providing metho
 The `Algorithms` component contains various graph algorithms that operate on the graph data structure. It includes functionalities such as:
 
 - **Connectivity**: Determines if the graph is connected and finds connected components.
-- **Shortest Paths**: Finds the shortest path between two vertices using Dijkstra's algorithm, handling both weighted and unweighted graphs.
+- **Shortest Paths**: Finds the shortest path between two vertices using Dijkstra/Bellman-Ford algorithm, handling both weighted and unweighted graphs.
 - **Cycles**: Determines if the graph contains a cycle and finds negative cycles in directed graphs.
 - **Bipartiteness**: Determines if the graph is bipartite and returns the partition of vertices if it is.
 
