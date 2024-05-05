@@ -52,18 +52,6 @@ namespace ariel {
 
     };
 
-    class Algorithms {
-    public:
-        static int isConnected(ariel::Graph &g);
-
-        static std::vector<int> shortestPath(ariel::Graph &, int, int);
-
-        static int isContainsCycle(ariel::Graph &);
-
-        static std::vector<int> negativeCycle(ariel::Graph &g);
-
-        static std::pair<std::vector<int>, std::vector<int>> isBipartite(ariel::Graph &g);
-    };
 
 
 }
