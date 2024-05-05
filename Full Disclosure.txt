@@ -1,0 +1,2 @@
+i used caht GPT for writing the README. after he gave me the answer i changed it according to what i thought.
+also i used chat GPT int the code mainly to overcome syntax errors, but i wrote the core of the code myseld and i know and understand every piece of it.
