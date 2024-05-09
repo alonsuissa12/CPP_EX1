@@ -14,17 +14,17 @@
 
 
 
-int isContainsCycleRec( ariel::Graph& ,int ,int* , std::vector<int> *, std::vector<int>* ,std::vector<int>*,std::vector<int>*,int*);
-void printCycle(const std::vector<int> &cycle);
-void printCycle(const int *startEnd,const std::vector<int>* prev);
-void printPath(std:: vector<int> &path);
-void printGroups(std::pair<std::vector<int>,std::vector<int>> &groups);
-std::string groupsToString(const std::pair<std::vector<int>, std::vector<int>> &groups);
+
 
 
 namespace ariel{
 
     class Algorithms {
+    private:
+        static int isContainsCycleRec( ariel::Graph& ,int ,int* , std::vector<int> *, std::vector<int>* ,std::vector<int>*,std::vector<int>*,int*);
+        static void printCycle(const std::vector<int> &cycle);
+        static void printCycle(const int *startEnd,const std::vector<int>* prev);
+        static void printPath(std:: vector<int> &path);
     public:
         static int isConnected(ariel::Graph &g);
 
@@ -35,6 +35,11 @@ namespace ariel{
         static std::vector<int> negativeCycle(ariel::Graph &g);
 
         static std::pair<std::vector<int>, std::vector<int>> isBipartite(ariel::Graph &g);
+
+        static void printGroups(std::pair<std::vector<int>,std::vector<int>> &groups);
+
+        static std::string groupsToString(const std::pair<std::vector<int>, std::vector<int>> &groups);
+
     };
 }
 #endif

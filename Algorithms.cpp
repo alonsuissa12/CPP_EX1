@@ -146,7 +146,7 @@ std::vector<int> Algorithms::shortestPath(Graph &g, int start, int end) {
     return path;
 }
 
-void printPath(std::vector<int> &path) {
+void Algorithms::printPath(std::vector<int> &path) {
     for (unsigned int i = 0; i < path.size(); ++i) {
         LOG(path[i]);
         if (i + 1 != path.size())
@@ -182,7 +182,7 @@ int Algorithms::isContainsCycle(Graph &g) {
 }
 
 // Recursive function to detect a cycle starting from a given vertex
-int isContainsCycleRec(Graph &g, int start, int *timer, std::vector<int> *visited, std::vector<int> *timeDetection,
+int Algorithms::isContainsCycleRec(Graph &g, int start, int *timer, std::vector<int> *visited, std::vector<int> *timeDetection,
                        std::vector<int> *timeEnd, std::vector<int> *prev, int *answer) {
     auto uiStart = (unsigned int) start;
     (*timeDetection)[uiStart] = *timer;
@@ -194,10 +194,12 @@ int isContainsCycleRec(Graph &g, int start, int *timer, std::vector<int> *visite
         if (!(*visited)[uineighbor]) {
             (*prev)[uineighbor] = start;
             int returnVal = isContainsCycleRec(g, neighbor, timer, visited, timeDetection, timeEnd, prev, answer);
-            if (returnVal == 1)
+            if (returnVal == 1) // if a cycle already found
                 return 1;
         } else {
-            if ((*timeEnd)[uineighbor] == -1 && neighbor != (*prev)[uiStart]) {
+            //if we found a vertex that is neighbor of us and was detected before us and didn't finish yet
+            if ((*timeEnd)[uineighbor] == -1 && neighbor != (*prev)[uiStart] &&
+                (*timeDetection)[uineighbor] < (*timeDetection)[start]) {
                 answer[0] = neighbor;
                 answer[1] = start;
                 return 1;
@@ -211,7 +213,7 @@ int isContainsCycleRec(Graph &g, int start, int *timer, std::vector<int> *visite
 }
 
 // Function to print the cycle
-void printCycle(const int *startEnd, const std::vector<int> *prev) {
+void Algorithms::printCycle(const int *startEnd, const std::vector<int> *prev) {
 //    int curVertex = startEnd[1];
 //    while (curVertex != startEnd[0]) {
 //        LOG(curVertex << " --> ");
@@ -234,7 +236,7 @@ std::vector<int> cycle;
 }
 
 // Function to print the cycle
-void printCycle(const std::vector<int> &cycle) {
+void Algorithms::printCycle(const std::vector<int> &cycle) {
     for (unsigned int i = 0; i < cycle.size(); ++i) {
         if (1 + i < cycle.size()){
             LOG(cycle[i] << " --> ");
@@ -291,7 +293,7 @@ std::pair<std::vector<int>, std::vector<int>> Algorithms::isBipartite(Graph &g) 
 }
 
 // returns a string represents the partition
-std::string groupsToString(const std::pair<std::vector<int>, std::vector<int>> &groups) {
+std::string Algorithms::groupsToString(const std::pair<std::vector<int>, std::vector<int>> &groups) {
     std::stringstream result;
     if (groups.first[0] == 0 && groups.second[0] == 0)
         result << "The graph is not bipartite";
@@ -317,7 +319,7 @@ std::string groupsToString(const std::pair<std::vector<int>, std::vector<int>> &
 }
 
 // prints the graph partition (if exists)
-void printGroups(std::pair<std::vector<int>, std::vector<int>> &groups) {
+void Algorithms::printGroups(std::pair<std::vector<int>, std::vector<int>> &groups) {
     if (groups.first[0] == 0 && groups.second[0] == 0)
         LOGln("the graph is not bipartite");
     else {

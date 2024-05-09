@@ -32,7 +32,7 @@ int main() {
     cout << "isContainsCycle: ";
     cout << Algorithms::isContainsCycle(g) << endl;  // Should print: "0" (false).
     pair<vector<int>, vector<int>> groups = Algorithms::isBipartite(g);
-    printGroups(groups);        // Should print: "The graph is bipartite: A={0, 2}, B={1}."
+    Algorithms::printGroups(groups);        // Should print: "The graph is bipartite: A={0, 2}, B={1}."
 
     cout << "\n#########################################  G2 ##############################################\n";
 
@@ -51,9 +51,9 @@ int main() {
     Algorithms::shortestPath(g, 0, 4);// Should print: there is no path!.
      Algorithms::isContainsCycle(g); // Should print: "The cycle is: 2 --> 1 --> 0 --> 2".
     groups = Algorithms::isBipartite(g);
-    printGroups(groups);                            // Should print: "0" (false).
+    Algorithms::printGroups(groups);                            // Should print: "0" (false).
 
-    cout << "\n#########################################  3 ##############################################\n";
+    cout << "\n######################################### G3 ##############################################\n";
     // 5x5 matrix that represents a connected weighted graph.
     vector<vector<int>> graph3 = {
             {0, 1, 2, 0, 0},
@@ -69,7 +69,7 @@ int main() {
     Algorithms::shortestPath(g, 0, 4);// Should print: 0->2->3->4.
     cout << Algorithms::isContainsCycle(g) << endl; // Should print: "2 --> 1 --> 0 --> 2". "1" (true).
     groups = Algorithms::isBipartite(g);
-    printGroups(groups);                            // Should print: "The graph is not bipartite"
+    Algorithms::printGroups(groups);                            // Should print: "The graph is not bipartite"
 
     cout << "\n#########################################  G4 ##############################################\n";
 

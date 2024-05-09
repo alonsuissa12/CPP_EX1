@@ -254,7 +254,7 @@ TEST_CASE("Test isBipartite"){
             {0, 1, 0}};
     g.loadGraph(graph);
     pair<vector<int>, vector<int>> groups = ariel::Algorithms::isBipartite(g);
-    CHECK((groupsToString(groups).compare("The graph is bipartite: A={0, 2}, B={1}") == 0));
+    CHECK((ariel::Algorithms::groupsToString(groups).compare("The graph is bipartite: A={0, 2}, B={1}") == 0));
 
     vector<vector<int>> graph2 = {
             {0, 1, 1, 0, 0},
@@ -264,8 +264,8 @@ TEST_CASE("Test isBipartite"){
             {0, 0, 0, 0, 0}};
     g.loadGraph(graph2);
     groups = ariel::Algorithms::isBipartite(g);
-    cout << groupsToString(groups) << endl;
-    CHECK((groupsToString(groups).compare("The graph is not bipartite") == 0));
+    cout << ariel::Algorithms::groupsToString(groups) << endl;
+    CHECK((ariel::Algorithms::groupsToString(groups).compare("The graph is not bipartite") == 0));
 
     vector<vector<int>> graph3 = {
             {0, 1, 2, 0, 0},
@@ -275,7 +275,7 @@ TEST_CASE("Test isBipartite"){
             {0, 0, 0, 5, 0}};
     g.loadGraph(graph3);
     groups = ariel::Algorithms::isBipartite(g);
-    CHECK((groupsToString(groups).compare("The graph is not bipartite") == 0));
+    CHECK((ariel::Algorithms::groupsToString(groups).compare("The graph is not bipartite") == 0));
 
     vector<vector<int>> graph4 = {
             {0, 1, 2, 0, -2},
@@ -285,7 +285,7 @@ TEST_CASE("Test isBipartite"){
             {0, 0, 0, -1, 0}};
     g.loadGraph(graph4);
     groups = ariel::Algorithms::isBipartite(g);
-    CHECK((groupsToString(groups).compare("The graph is bipartite: A={0, 3}, B={1, 2, 4}") == 0));
+    CHECK((ariel::Algorithms::groupsToString(groups).compare("The graph is bipartite: A={0, 3}, B={1, 2, 4}") == 0));
 }//v
 
 TEST_CASE("Test invalid graph"){
